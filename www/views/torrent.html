@@ -1,0 +1,87 @@
+<div class="row" data-ng-show="init" data-ng-init="sync()">
+    <div class="col-md-12">
+            <h2 class="panel-title">Load New Torrent</h2>
+            <form class="form" data-ng-submit="load()">
+                <div class="form-group">
+                    <!-- Placeholder is BigBugBunny again -->
+                    <input type="text" class="form-control"
+                    id="location" data-ng-model="location"
+                    placeholder="magnet:?xt=urn:btih:88594AAACBDE40EF3E2510C47374EC0AA396C08E">
+                </div>
+                <button class="btn btn-primary">
+                    Load
+                </button>
+            <form>
+        </div>
+    </div>
+</div>
+<div class="row" data-ng-show="info && info.fetching">
+    <div class="col-md-12">
+        Loading....
+    </div>
+</div>
+<div class="row" data-ng-show="info && !info.fetching">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Torrent</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>Name</td>
+                        <td>{{info.name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Comment</td>
+                        <td>{{info.comment}}</td>
+                    </tr>
+                    <tr>
+                        <td>Size</td>
+                        <td>{{info.size / 1024 / 1024}}</td>
+                    </tr>
+                    <tr ng-show="info.progress">
+                        <td>Swarm</td>
+                        <td>{{info.progress.seeds}} seeds / {{info.progress.peers}} peers</td>
+                    </tr>
+                    <tr ng-show="info.progress">
+                        <td>Speed</td>
+                        <td>{{info.progress.down}} <fa name="arrow-down"></fa> / {{info.progress.up}} <fa name="arrow-up"></fa></td>
+                    </tr>
+                </table>
+                <div data-ng-show="info.progress">
+                    <!-- TODO: need to determine the max -->
+                    <b>Buffer<b>
+                    <progress data-ng-show="info.progress.buffer">
+                        <bar ng-repeat="bar in info.progress.buffer.pieces track by $index" 
+                        value="1"
+                        type="{{bar ? 'success' : 'danger'}}">
+                        </bar>
+                    </progress>
+
+                    <b>Overall progress<b>
+                    <progressbar 
+                        class="progress-striped active"
+                        value="info.progress.completed"
+                        max="100"
+                        >{{Math.round(info.progress.completed)}} %
+                        </progressbar>
+                </div>
+                <div >
+                    <!-- TODO: Do not play if buffer is not green -->
+                    <button
+                        class="btn btn-primary"
+                        data-ng-show="info.progress"
+                        data-ng-click="stream()">
+                        Play
+                    </button>
+                    <button 
+                        class="btn btn-default" 
+                        data-ng-click="stop()">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

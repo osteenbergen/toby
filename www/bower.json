@@ -1,0 +1,19 @@
+{
+    "name" : "servicedesk",
+    "version" : "0.0.1",
+    "dependencies" : {
+        "less" : "latest",
+        "jquery" : "latest",
+        "angular" : "latest",
+        "bootstrap" : "latest",
+        "fontawesome" : "latest",
+        "angular-bootstrap" : "latest",
+        "angular-route" : "latest",
+        "angular-resource" : "latest",
+        "angular-fontawesome" : "latest",
+        "angular-match-media" : "latest",
+        "requirejs" : "latest",
+        "requirejs-domready" : "latest"
+    },
+    "private" : true
+}

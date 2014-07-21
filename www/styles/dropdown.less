@@ -1,0 +1,70 @@
+.dropdown {
+    .dropdown-menu {
+        padding: 0;
+        border: 1px solid @divider-gray-medium;
+        border-radius: 0;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        color: @divider-blue-dark;
+        line-height: 20px;
+
+        &.arrow {
+            &.right {
+                &:before,&:after {
+                    right: 15px;
+                } 
+            }
+            &.left {
+                &:before,&:after {
+                    left: 15px;
+                }
+            }
+
+            &:before {
+                position: absolute;
+                top: -7px;
+                display: inline-block;
+                border-right: 7px solid transparent;
+                border-bottom: 7px solid @divider-gray-medium;
+                border-left: 7px solid transparent;
+                content: '';
+            }
+            &:after {
+                position: absolute;
+                top: -6px;
+                display: inline-block;
+                border-right: 7px solid transparent;
+                border-bottom: 7px solid @white;
+                border-left: 7px solid transparent;
+                content: '';
+            }
+
+            &.panel > * {
+                border-radius: 0;
+            }
+
+            &.panel-default:after {
+                border-bottom-color: @panel-default-heading-bg;
+            }
+            &.panel-success:after {
+                border-bottom-color: @panel-success-heading-bg;
+            }
+            &.panel-primary:after {
+                border-bottom-color: @panel-primary-heading-bg;
+            }
+            &.panel-info:after {
+                border-bottom-color: @panel-info-heading-bg;
+            }
+            &.panel-warning:after {
+                border-bottom-color: @panel-warning-heading-bg;
+            }
+            &.panel-danger:after {
+                border-bottom-color: @panel-danger-heading-bg;
+            }
+        }
+        li {
+            background: @white;
+            padding: 10px 15px;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+#header {
+    background: @divider-blue-light;
+    color: @white;
+    line-height: 50px;
+    border-radius: 0;
+    margin-bottom: 15px;
+    .navbar-brand {
+        #toby_logo {
+            position: relative;
+            top: -11px;
+            background-color: #30B255;
+            border-radius: 28px;
+            padding: 4px;
+            
+            .icon-toby{   
+                color: #FEFEFE;
+                font-size: 32px;
+            }
+        }
+    }
+
+    .navbar-header {
+        button {
+            position: relative;
+            float: right;
+            background-color: @brand-success;
+            padding: 0 20px;
+            border: 0;
+            border-radius: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+    .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+        border: 0;
+        .navbar-right {
+            #head_torrent {
+                background-color: @brand-success;
+            }
+            #head_player {
+                background-color: @brand-warning;
+            }
+        }
+    }
+    a {
+        color: @white;
+        background-color: inherit;
+        &:hover {
+            background-color: @brand-info;
+        }
+    }
+}

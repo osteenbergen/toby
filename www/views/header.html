@@ -1,0 +1,46 @@
+<header>
+    <nav class="navbar" role="navigation">
+        <div class="container-fluid clearfix">
+            <div class="navbar-header">
+                <div data-ng-click="isCollapsed = !isCollapsed">
+                    <button type="button" data-show-on-small>
+                        <span class="sr-only">Toggle navigation</span>
+                        <fa name=bars></fa>
+                    </button>
+                </div>
+                <a class="navbar-brand" href="#">
+                    <div id="toby_logo">
+                        <span class="icon-toby"></span>
+                    </div>
+                </a>
+            </div>
+            <div 
+                id="navbar-buttons" 
+                class="collapse navbar-collapse" 
+                ng-class="!isCollapsed && 'in'">
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="head_torrent">
+                        <a href="#/torrent"
+                            tooltip="Torrent"
+                            tooltip-tigger="mouseenter"
+                            tooltip-append-to-body="true"
+                            tooltip-placement="bottom">
+                            <fa name="cloud-download"></fa>
+                            <span data-show-on-small>Torrent</span>
+                        </a>
+                    </li>
+                    <li id="head_player" ng-show="has_stream()">
+                        <a href="#/player"
+                            tooltip="Player"
+                            tooltip-tigger="mouseenter"
+                            tooltip-append-to-body="true"
+                            tooltip-placement="bottom">
+                            <fa name="video-camera"></fa>
+                            <span data-show-on-small>Player</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

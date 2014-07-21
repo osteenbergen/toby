@@ -1,0 +1,25 @@
+{
+  "name": "angular-match-media",
+  "main": "angular-match-media.js",
+  "version": "0.1.2",
+  "homepage": "https://github.com/IlanFrumer/angular-match-media",
+  "authors": [
+    "ilanfrumer <ilanfrumer@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "Gruntfile.coffee",
+    "*.json"
+  ],
+  "_release": "0.1.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.2",
+    "commit": "0e5b7a3747e6ae4f684112432833c3ee880a5fd6"
+  },
+  "_source": "git://github.com/IlanFrumer/angular-match-media.git",
+  "_target": "*",
+  "_originalSource": "angular-match-media"
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>TOBY</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css">
+        <link rel="stylesheet/less" type="text/css" href="styles/toby.less">
+    </head>
+    <body id="toby" ng-controller="HomeCtrl">
+        <section 
+            id="header"
+            ng-include="'views/header.html'"
+            ng-controller="HeaderCtrl"
+            >
+        </section>
+        <section 
+            id="content"
+            class="container-fluid"
+            ng-view
+            >
+        </section>
+        <!-- Scripts to be included -->
+        <script src="bower_components/requirejs/require.js" data-main="scripts/include.js"></script>
+    </body>
+</html>
